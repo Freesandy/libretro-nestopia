@@ -51,22 +51,22 @@ extern "C" {
 struct retro_core_option_definition option_defs_us[] = {
    {
       "nestopia_blargg_ntsc_filter",
-      "Blargg NTSC Filter",
-      "Enable Blargg NTSC filters.",
+      "Blargg NTSC滤镜",
+      "启用Blargg NTSC滤镜. ",
       {
          { "disabled",   NULL },
-         { "composite",  "Composite Video" },
+         { "composite",  "复合视频" },
          { "svideo",     "S-Video" },
          { "rgb",        "RGB SCART" },
-         { "monochrome", "Monochrome" },
+         { "monochrome", "黑白" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "nestopia_palette",
-      "Palette",
-      "Choose which color palette is going to be used.",
+      "调色板",
+      "选择要使用的调色板. ",
       {
          { "cxa2025as",            "CXA2025AS" },
          { "consumer",             "Consumer" },
@@ -86,19 +86,19 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_nospritelimit",
-      "Remove Sprite Limit",
-      "Remove 8-sprites-per-scanline hardware limit.",
+      "移除活动块限制",
+      "移除每扫描线8个活动块的硬件限制. ",
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
+         { "disabled", "禁用" },
+         { "enabled",  "启用" },
          { NULL, NULL },
       },
-      "disabled"
+      "enabled"
    },
    {
       "nestopia_overclock",
-      "CPU Speed (Overclock)",
-      "Overclock the emulated CPU.",
+      "CPU速度 (超频) ",
+      "对模拟的CPU进行超频. ",
       {
          { "1x", NULL },
          { "2x", NULL },
@@ -108,10 +108,11 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_select_adapter",
-      "4 Player Adapter",
-      "Manually select a 4 Player Adapter if needed. Some games will not recognize the adapter correctly through the NstDatabase.xml database, this option should help fix that.",
+      "4打适配器",
+      "手动选择4打适配器. \n"
+	  "有些游戏无法通过NstDatabase.xml数据库正确识别适配器, 此项可以帮助解决此问题. ",
       {
-         { "auto",    "Auto" },
+         { "auto",    "自动" },
          { "ntsc",    "NTSC" },
          { "famicom", "Famicom" },
          { NULL, NULL },
@@ -120,43 +121,45 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_fds_auto_insert",
-      "FDS Auto Insert",
-      "Automatically insert first FDS disk on reset.",
+      "磁盘自动插入",
+      "复位时自动插入第一张磁盘. ",
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
+         { "disabled", "禁用" },
+         { "enabled",  "启用" },
          { NULL, NULL },
       },
       "enabled"
    },
    {
       "nestopia_overscan_v",
-      "Mask Overscan (Vertical)",
-      "Mask out (vertically) the potentially random glitchy video output that would have been hidden by the bezel around the edge of a standard-definition television screen.",
+      "剪切过扫描 (垂直) ",
+      "剪切垂直方向的应该被标准电视的边框隐藏的过扫描区域. ",
       {
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "enabled",  "启用" },
+         { "disabled", "禁用" },
          { NULL, NULL },
       },
       "enabled"
    },
    {
       "nestopia_overscan_h",
-      "Mask Overscan (Horizontal)",
-      "Mask out (horizontally) the potentially random glitchy video output that would have been hidden by the bezel around the edge of a standard-definition television screen.",
+      "剪切过扫描 (水平) ",
+      "剪切水平方向的应该被标准电视的边框隐藏的过扫描区域. ",
       {
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "enabled",  "启用" },
+         { "disabled", "禁用" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "nestopia_aspect",
-      "Preferred Aspect Ratio",
-      "Choose the preferred aspect ratio. RetroArch's aspect ratio must be set to Core provided in the Video settings. 'auto' will use the NstDatabase.xml database file for aspect ratio autodetection. If there is no database present it will default to NTSC for 'auto'.",
+      "输出宽高比",
+      "选择输出宽高比. RetroArch的宽高比必须设为'内核提供'. \n"
+	  "'自动'会使用NstDatabase.xml数据库文件自动检测宽高比. \n"
+	  "如果没有数据库文件, '自动'缺省为NTSC. ",
       {
-         { "auto", "Auto" },
+         { "auto", "自动" },
          { "ntsc", "NTSC" },
          { "pal",  "PAL" },
          { "4:3",  "4:3" },
@@ -166,21 +169,24 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_genie_distortion",
-      "Game Genie Sound Distortion",
-      "The Game Genie cheat device could inadvertently introduce sound distortion in games. By enabling this, you can simulate the distortion it would add to a game's sound.",
+      "金手指卡声音变形",
+      "金手指设备会不经意的导致声音变形. \n"
+	  "启用此项可以模拟这种变形, 添加到游戏声音中去. ",
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
+         { "disabled", "禁用" },
+         { "enabled",  "启用" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "nestopia_favored_system",
-      "System Region",
-      "Choose which region the system is from. 'Auto' will use the NstDatabase.xml database file for region autodetection. If there is no database present it will default to NTSC for 'Auto'.",
+      "系统区域",
+      "选择系统区域. \n"
+	  "'自动'会使用NstDatabase.xml数据库自动检测区域. \n"
+	  "如果没有数据库文件, '自动'缺省为NTSC. ",
       {
-         { "auto",    "Auto" },
+         { "auto",    "自动" },
          { "ntsc",    "NTSC" },
          { "pal",     "PAL" },
          { "famicom", "Famicom" },
@@ -191,31 +197,31 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_ram_power_state",
-      "RAM Power-on State",
+      "内存启动状态",
       "",
       {
          { "0x00",   NULL },
          { "0xFF",   NULL },
-         { "random", "Random" },
+         { "random", "随机" },
          { NULL, NULL },
       },
       "0x00"
    },
    {
       "nestopia_button_shift",
-      "Shift Buttons Clockwise",
-      "Rotate A/B/X/Y button clockwise.", /* is this right? @gadsby */
+      "顺时针移动按键",
+      "顺时针旋转A/B/X/Y按键. ", /* is this right? @gadsby */
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
+         { "disabled", "禁用" },
+         { "enabled",  "启用" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "nestopia_turbo_pulse",
-      "Turbo Pulse Speed",
-      "Set the turbo pulse speed for the Turbo B and Turbo A buttons.",
+      "连发键速度",
+      "设置连发键A和B的连发速度. ",
       {
          { "2", NULL },
          { "3", NULL },
@@ -231,8 +237,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_sq1",
-      "Square 1 Channel Volume %",
-      "Modify Square 1 Channel Volume  %.",
+      "矩形波声道1音量 %",
+      "修改矩形波声道1音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -253,8 +259,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_sq2",
-      "Square 2 Channel Volume %",
-      "Modify Square 2 Channel Volume  %.",
+      "矩形波声道2音量 %",
+      "修改矩形波声道2音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -275,8 +281,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_tri",
-      "Triangle Channel Volume %",
-      "Modify Triangle Channel Volume  %.",
+      "三角波声道音量 %",
+      "修改三角波声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -297,8 +303,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_noise",
-      "Noise Channel Volume %",
-      "Modify Noise Channel Volume  %.",
+      "噪音声道音量 %",
+      "修改噪音声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -319,8 +325,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_dpcm",
-      "DPCM Channel Volume %",
-      "Modify DPCM Channel Volume  %.",
+      "DPCM声道音量 %",
+      "修改DPCM声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -341,8 +347,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_fds",
-      "FDS Channel Volume %",
-      "Modify FDS Channel Volume  %.",
+      "FDS声道音量 %",
+      "修改FDS声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -363,8 +369,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_mmc5",
-      "MMC5 Channel Volume %",
-      "Modify MMC5 Channel Volume  %.",
+      "MMC5声道音量 %",
+      "修改MMC5声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -385,8 +391,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_vrc6",
-      "VRC6 Channel Volume %",
-      "Modify VRC6 Channel Volume  %.",
+      "VRC6声道音量 %",
+      "修改VRC6声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -407,8 +413,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_vrc7",
-      "VRC7 Channel Volume %",
-      "Modify VRC7 Channel Volume  %.",
+      "VRC7声道音量 %",
+      "修改VRC7声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -429,8 +435,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_n163",
-      "N163 Channel Volume %",
-      "Modify N163 Channel Volume  %.",
+      "N163声道音量 %",
+      "修改N163声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -451,8 +457,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "nestopia_audio_vol_s5B",
-      "S5B Channel Volume %",
-      "Modify N163 Channel Volume  %.",
+      "S5B声道音量 %",
+      "修改S5B声道音量  %.",
       {
          { "0", NULL },
          { "10", NULL },
@@ -494,7 +500,7 @@ struct retro_core_option_definition *option_defs_intl[RETRO_LANGUAGE_LAST] = {
    NULL,           /* RETRO_LANGUAGE_RUSSIAN */
    NULL,           /* RETRO_LANGUAGE_KOREAN */
    NULL,           /* RETRO_LANGUAGE_CHINESE_TRADITIONAL */
-   option_defs_chs,/* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
+   NULL,           /* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
    NULL,           /* RETRO_LANGUAGE_ESPERANTO */
    NULL,           /* RETRO_LANGUAGE_POLISH */
    NULL,           /* RETRO_LANGUAGE_VIETNAMESE */
